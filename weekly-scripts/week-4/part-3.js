@@ -1,6 +1,7 @@
 function preload() {
     plant = loadImage("../assets/images/room/plant.png");
     chair = loadImage("../assets/images/room/chair.png");
+    table = loadImage("../assets/images/room/table.png");
 
 }
 
@@ -27,7 +28,7 @@ function draw(){
   noStroke();
 
   //left wall
-  fill(235, 188, 157);
+  fill(255, 188, 157);
   quad(0, 0, 220, 0, 220, 450, 0, 600);
   //window
   stroke(219, 167, 129);
@@ -36,7 +37,7 @@ function draw(){
 
   //middle wall
   noStroke();
-  fill(255, 188, 157);
+  fill(243, 188, 157);
   rect(220, 0, 160, 450);
   //window
   stroke(219, 167, 129);
@@ -47,7 +48,7 @@ function draw(){
 
 
   //right wall
-  fill(235, 188, 157);
+  fill(255, 188, 157);
   quad(380, 0, 600, 0, 600, 600, 380, 450);
   //window
   stroke(219, 167, 129);
@@ -56,5 +57,19 @@ function draw(){
 
   image(chair, 0, 0);
   image(plant, 0, 0);
+  image(table, 0, 0);
 
+  // flame();
+  noStroke();
+  var r = random(170, 255)
+  fill(255, r, 45);
+  ellipse(475, 465, 7, 7)
+
+
+}
+
+
+function flame(){
+  fill("yellow");
+  ellipse(707, 639, 5, 5)
 }
