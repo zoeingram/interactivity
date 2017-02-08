@@ -8,6 +8,8 @@ function preload() {
     shelf = loadImage("../assets/images/room/shelf.png");
     orchid = loadImage("../assets/images/room/orchid.png");
     sink = loadImage("../assets/images/room/sink.png");
+    palm = loadImage("../assets/images/room/palm.png");
+
   }
 
 var scr = 1;
@@ -118,7 +120,16 @@ function drawScreen2() {
         fill(wall, wall, wall);
         rect(0, 0, 344, 440);
         image(sink, 0, 160);
-        image(orchid, 0, 0);
+        var r = random(120, 255);
+        var r2 = random(0, 110)
+        fill(0, r2, r);
+        rect(425, 257, 3.6, 28);
+        // quad(336, 274, 380, 265, 500, 281, 466, 292);
+        image(palm, 0, 50);
+        //window
+        stroke(0);
+        rect(200, 150, 60, 40);
+
     }
 
     function drawScreen4() {
@@ -145,7 +156,7 @@ function mousePressed() {
     }
   } else if(scr == 2) {
     if(overWindow(450, 200, 60, 40)){
-      scr = 3;
+      scr = 1;
     }
   }
 }
