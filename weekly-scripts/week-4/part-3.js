@@ -14,7 +14,6 @@ function preload() {
     sidetable = loadImage("../assets/images/room/sidetable.png");
     dresser = loadImage("../assets/images/room/dresser.png");
 
-
 }
 
 var scr = 1;
@@ -67,8 +66,8 @@ function drawScreen1() {
     fill(255);
     rect(54, 88, 118, 219);
     setGradient(54, 88, 118, 219, c1, c2);
-    if(overWindow(54, 88, 118, 219)){
-      setGradient(54, 88, 118, 219, c2, c1);
+    if (overWindow(54, 88, 118, 219)) {
+        setGradient(54, 88, 118, 219, c2, c1);
     }
     stroke(219, 167, 129);
     quad(54, 88, 172, 140, 172, 254, 54, 306);
@@ -83,8 +82,8 @@ function drawScreen1() {
     rect(220, 0, 160, 450);
     //window
     setGradient(238, 140, 125, 114, c1, c2);
-    if(overWindow(238, 140, 125, 114)){
-      setGradient(238, 140, 125, 114, c2, c1);
+    if (overWindow(238, 140, 125, 114)) {
+        setGradient(238, 140, 125, 114, c2, c1);
     }
     stroke(219, 167, 129);
     // fill(255);
@@ -100,8 +99,8 @@ function drawScreen1() {
     stroke(219, 167, 129);
     rect(430, 87, 118, 219);
     setGradient(430, 87, 118, 219, c1, c2);
-    if(overWindow(430, 87, 118, 219)){
-      setGradient(430, 87, 118, 219, c2, c1);
+    if (overWindow(430, 87, 118, 219)) {
+        setGradient(430, 87, 118, 219, c2, c1);
     }
     stroke(219, 167, 129);
     quad(431, 140, 549, 88, 549, 306, 431, 254);
@@ -132,7 +131,7 @@ function drawScreen2() {
     rect(279, 179, 272, 272);
     rect(450, 200, 60, 40);
     if (overWindow(450, 200, 60, 40)) {
-      setGradient(450, 200, 60, 40, c2, c1);
+        setGradient(450, 200, 60, 40, c2, c1);
         // rect(450, 200, 60, 40);
     }
     noFill();
@@ -162,7 +161,7 @@ function drawScreen3() {
     noFill();
     rect(430, 150, 60, 40);
     if (overWindow(430, 150, 60, 40)) {
-      setGradient(430, 150, 60, 40, c2, c1);
+        setGradient(430, 150, 60, 40, c2, c1);
     }
 
 }
@@ -179,7 +178,7 @@ function drawScreen4() {
     rect(0, 263, 414, 334);
     rect(250, 400, 60, 40);
     if (overWindow(250, 400, 60, 40)) {
-      setGradient(250, 400, 60, 40, c2, c1);
+        setGradient(250, 400, 60, 40, c2, c1);
     }
     image(ivy, 30, 0);
     image(ficus, 0, 210);
