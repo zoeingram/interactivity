@@ -1,3 +1,5 @@
+"use strict";
+
 function preload() {
     plant = loadImage("../assets/images/room/plant.png");
     chair = loadImage("../assets/images/room/chair.png");
@@ -6,8 +8,6 @@ function preload() {
     plant1 = loadImage("../assets/images/room/plant1.png");
     plant2 = loadImage("../assets/images/room/plant2.png");
     shelf = loadImage("../assets/images/room/shelf.png");
-    orchid = loadImage("../assets/images/room/orchid.png");
-    sink = loadImage("../assets/images/room/sink.png");
     palm = loadImage("../assets/images/room/palm.png");
     ficus = loadImage("../assets/images/room/ficus.png");
     ivy = loadImage("../assets/images/room/ivy.png");
