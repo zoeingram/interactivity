@@ -10,7 +10,7 @@ function preload() {
     sink = loadImage("../assets/images/room/sink.png");
     palm = loadImage("../assets/images/room/palm.png");
 
-  }
+}
 
 var scr = 1;
 
@@ -97,9 +97,9 @@ function drawScreen2() {
     image(shelf, 0, 0);
     rect(279, 179, 272, 272);
     rect(450, 200, 60, 40);
-    if(overWindow(450, 200, 60, 40)){
-      fill("blue");
-      rect(450, 200, 60, 40);
+    if (overWindow(450, 200, 60, 40)) {
+        fill("blue");
+        rect(450, 200, 60, 40);
     }
     noFill();
     line(126, 258, 279, 179);
@@ -110,32 +110,39 @@ function drawScreen2() {
     rect(126, 258, 272, 272);
     line(398, 530, 551, 451);
 }
-    function drawScreen3() {
-        background("white");
-        ellipse(300, 300, 30, 30)
-        stroke(0);
-        line(344, 440, 600, 600);
-        var wall = map(mouseY, 0, 440, 255, 205);
-        noStroke();
-        fill(wall, wall, wall);
-        rect(0, 0, 344, 440);
-        image(sink, 0, 160);
-        var r = random(120, 255);
-        var r2 = random(0, 110)
-        fill(0, r2, r);
-        rect(425, 257, 3.6, 28);
-        // quad(336, 274, 380, 265, 500, 281, 466, 292);
-        image(palm, 0, 50);
-        //window
-        stroke(0);
-        rect(200, 150, 60, 40);
 
+function drawScreen3() {
+    background("white");
+    ellipse(300, 300, 30, 30)
+    stroke(0);
+    line(344, 440, 600, 600);
+    var wall = map(mouseY, 0, 440, 255, 205);
+    noStroke();
+    fill(wall, wall, wall);
+    rect(0, 0, 344, 440);
+    image(sink, 0, 160);
+    var r = random(120, 255);
+    var r2 = random(0, 100)
+    fill(0, r2, 255);
+    rect(425, 257, 3.6, 30);
+    // quad(336, 274, 380, 265, 500, 281, 466, 292);
+    image(palm, 0, 50);
+    //window
+    stroke(0);
+    noFill();
+    rect(200, 150, 60, 40);
+    if(overWindow(200, 150, 60, 40)){
+      fill(93, 208, 219);
+      stroke(93, 208, 219)
+      rect(200, 150, 60, 40);
     }
 
-    function drawScreen4() {
-        background("yellow");
-        ellipse(600, 550, 50, 50);
-    }
+}
+
+function drawScreen4() {
+    background("yellow");
+    ellipse(600, 550, 50, 50);
+}
 
 function overWindow(x, y, w, h) {
     if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
@@ -146,17 +153,21 @@ function overWindow(x, y, w, h) {
 }
 
 function mousePressed() {
-  if (scr == 1) {
-    if( mouseX < 220) {
-      scr = 2;
-    } else if(mouseX > 220 && mouseX < 380){
-      scr = 3;
-    } else if (mouseX > 380){
-      scr = 4;
+    if (scr == 1) {
+        if (mouseX < 220) {
+            scr = 2;
+        } else if (mouseX > 220 && mouseX < 380) {
+            scr = 3;
+        } else if (mouseX > 380) {
+            scr = 4;
+        }
+    } else if (scr == 2) {
+        if (overWindow(450, 200, 60, 40)) {
+            scr = 1;
+        }
+    } else if(scr == 3) {
+      if(overWindow(200, 150, 60, 40)){
+        scr = 1;
+      }
     }
-  } else if(scr == 2) {
-    if(overWindow(450, 200, 60, 40)){
-      scr = 1;
-    }
-  }
 }
