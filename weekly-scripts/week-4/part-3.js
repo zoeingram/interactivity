@@ -9,13 +9,22 @@ function preload() {
     orchid = loadImage("../assets/images/room/orchid.png");
     sink = loadImage("../assets/images/room/sink.png");
     palm = loadImage("../assets/images/room/palm.png");
+    ficus = loadImage("../assets/images/room/ficus.png");
+    ivy = loadImage("../assets/images/room/ivy.png");
+    sidetable = loadImage("../assets/images/room/sidetable.png");
+    dresser = loadImage("../assets/images/room/dresser.png");
+
 
 }
 
 var scr = 1;
+var c1, c2;
+
 
 function setup() {
     createCanvas(600, 600);
+    c1 = color(255, 156, 157);
+    c2 = color(112, 255, 255);
 }
 
 function draw() {
@@ -52,18 +61,33 @@ function drawScreen1() {
     fill(255, 188, 157);
     quad(0, 0, 220, 0, 220, 450, 0, 600);
 
+
     //window
-    stroke(219, 167, 129);
+    // stroke(219, 167, 129);
     fill(255);
+    rect(54, 88, 118, 219);
+    setGradient(54, 88, 118, 219, c1, c2);
+    if(overWindow(54, 88, 118, 219)){
+      setGradient(54, 88, 118, 219, c2, c1);
+    }
+    stroke(219, 167, 129);
     quad(54, 88, 172, 140, 172, 254, 54, 306);
+    noStroke();
+    fill(255, 188, 157);
+    triangle(173, 88, 173, 140, 54, 88);
+    triangle(53, 308, 173, 254, 173, 308);
 
     //middle wall
     noStroke();
-    fill(243, 188, 157);
+    fill(233, 188, 157);
     rect(220, 0, 160, 450);
     //window
+    setGradient(238, 140, 125, 114, c1, c2);
+    if(overWindow(238, 140, 125, 114)){
+      setGradient(238, 140, 125, 114, c2, c1);
+    }
     stroke(219, 167, 129);
-    fill(255);
+    // fill(255);
     rect(238, 140, 125, 114);
     noStroke();
 
@@ -74,8 +98,18 @@ function drawScreen1() {
     quad(380, 0, 600, 0, 600, 600, 380, 450);
     //window
     stroke(219, 167, 129);
-    fill(255);
+    rect(430, 87, 118, 219);
+    setGradient(430, 87, 118, 219, c1, c2);
+    if(overWindow(430, 87, 118, 219)){
+      setGradient(430, 87, 118, 219, c2, c1);
+    }
+    stroke(219, 167, 129);
     quad(431, 140, 549, 88, 549, 306, 431, 254);
+    noStroke();
+    fill(255, 188, 157);
+    triangle(429, 87, 429, 139, 548, 87);
+    triangle(429, 254, 429, 307, 548, 307);
+
     image(chair, 0, 0);
     image(plant, 0, 0);
     image(table, 0, 0);
@@ -98,15 +132,16 @@ function drawScreen2() {
     rect(279, 179, 272, 272);
     rect(450, 200, 60, 40);
     if (overWindow(450, 200, 60, 40)) {
-        fill("blue");
-        rect(450, 200, 60, 40);
+      setGradient(450, 200, 60, 40, c2, c1);
+        // rect(450, 200, 60, 40);
     }
     noFill();
+    stroke(0);
     line(126, 258, 279, 179);
     image(plant2, 100, 0);
     image(plant1, 0, 0);
-    var b = map(mouseY, 258, 530, 207, 121);
-    fill(89, 173, b);
+    var wall = map(mouseY, 0, 440, 210, 107);
+    fill(wall, 189, 174);
     rect(126, 258, 272, 272);
     line(398, 530, 551, 451);
 }
@@ -115,33 +150,39 @@ function drawScreen3() {
     background("white");
     ellipse(300, 300, 30, 30)
     stroke(0);
-    line(344, 440, 600, 600);
-    var wall = map(mouseY, 0, 440, 255, 205);
+    var wall = map(mouseY, 0, 440, 210, 107);
     noStroke();
-    fill(wall, wall, wall);
+    fill(wall, 189, 174);
     rect(0, 0, 344, 440);
-    image(sink, 0, 160);
-    var r = random(120, 255);
-    var r2 = random(0, 100)
-    fill(0, r2, 255);
-    rect(425, 257, 3.6, 30);
+    image(dresser, 0, 0);
     // quad(336, 274, 380, 265, 500, 281, 466, 292);
-    image(palm, 0, 50);
+    // image(palm, 0, 100);
     //window
     stroke(0);
     noFill();
-    rect(200, 150, 60, 40);
-    if(overWindow(200, 150, 60, 40)){
-      fill(93, 208, 219);
-      stroke(93, 208, 219)
-      rect(200, 150, 60, 40);
+    rect(430, 150, 60, 40);
+    if (overWindow(430, 150, 60, 40)) {
+      setGradient(430, 150, 60, 40, c2, c1);
     }
 
 }
 
 function drawScreen4() {
-    background("yellow");
-    ellipse(600, 550, 50, 50);
+    background("white");
+    stroke(100);
+    var face = map(mouseY, 263, 600, 255, 0);
+    fill(face, 205, 189);
+    rect(111, 0, 414, 334);
+    image(sidetable, 70, -20);
+    stroke(0);
+    fill(255);
+    rect(0, 263, 414, 334);
+    rect(250, 400, 60, 40);
+    if (overWindow(250, 400, 60, 40)) {
+      setGradient(250, 400, 60, 40, c2, c1);
+    }
+    image(ivy, 30, 0);
+    image(ficus, 0, 210);
 }
 
 function overWindow(x, y, w, h) {
@@ -165,9 +206,23 @@ function mousePressed() {
         if (overWindow(450, 200, 60, 40)) {
             scr = 1;
         }
-    } else if(scr == 3) {
-      if(overWindow(200, 150, 60, 40)){
-        scr = 1;
-      }
+    } else if (scr == 3) {
+        if (overWindow(430, 150, 60, 40)) {
+            scr = 1;
+        }
+    } else if (scr == 4) {
+        if (overWindow(250, 400, 60, 40)) {
+            scr = 1;
+        }
+    } else {}
+}
+
+function setGradient(x, y, w, h, c1, c2, axis) {
+    noFill();
+    for (var i = y; i <= y + h; i++) {
+        var inter = map(i, y, y + h, 0, 1);
+        var c = lerpColor(c1, c2, inter);
+        stroke(c);
+        line(x, i, x + w, i);
     }
 }
