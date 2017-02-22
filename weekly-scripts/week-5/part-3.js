@@ -213,40 +213,40 @@ function draw() {
             y2 += 5;
         }
 
-        if (h == 1) {
+        if (h == 1 || h == 13) {
             one.playMode('restart');
             one.play();
-        } else if (h == 2) {
+        } else if (h == 2 || h == 14) {
             two.playMode('restart');
             two.play();
-        } else if (h == 3) {
+        } else if (h == 3 || h ==15) {
             three.playMode('restart');
             three.play();
-        } else if (h == 4) {
+        } else if (h == 4 || h == 16) {
             four.playMode('restart');
             four.play();
-        } else if (h == 5) {
+        } else if (h == 5 || h ==17) {
             five.playMode('restart');
             five.play();
-        } else if (h == 6) {
+        } else if (h == 6 || h == 18) {
             six.playMode('restart');
             six.play();
-        } else if (h == 7) {
+        } else if (h == 7 || h == 19) {
             seven.playMode('restart');
             seven.play();
-        } else if (h == 8) {
+        } else if (h == 8 || h ==20) {
             eight.playMode('restart');
             eight.play();
-        } else if (h == 9) {
+        } else if (h == 9 || h ==21) {
             nine.playMode('restart');
             nine.play();
-        } else if (h == 10) {
+        } else if (h == 10 || h ==22) {
             ten.playMode('restart');
             ten.play();
-        } else if (h == 11) {
+        } else if (h == 11 || h ==23) {
             eleven.playMode('restart');
             eleven.play();
-        } else if (h == 12) {
+        } else if (h == 12 || h == 0) {
             twelve.playMode('restart');
             twelve.play();
         } else {
