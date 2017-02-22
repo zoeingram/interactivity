@@ -8,14 +8,15 @@ function preload(){
   rocks = loadImage("/weekly-scripts/week-6/images/rocks.png");
   rockstop = loadImage("/weekly-scripts/week-6/images/rockstop.png");
 
+
 }
 
 function setup(){
   createCanvas(600, 600);
-  // a = new Cactus(0, 0);
-  // b = new Cactus(100, -100);
-  // c = new Cactus(200, -50);
-  // d = new Cactus(400, -200);
+  a = new Cactus(0, 0);
+  b = new Cactus(100, -100);
+  c = new Cactus(200, -50);
+  d = new Cactus(400, -200);
   var c1  = color(255, 198, 140);
   var c2  = color(0, 198, 140);
    g1 = color(213, 107, 255);
@@ -30,6 +31,7 @@ function draw(){
   setGradient(0, 0, 600, 600, g1, g2);
   image(rockstop, 0, 0);
 
+  // fill("white");
   // a.display();
   // b.display();
   // c.display();
@@ -39,16 +41,16 @@ function draw(){
 
 }
 
-// var Cactus = function(shiftX, shiftY){
-//   this.display = function(){
-//     push();
-//     translate(shiftX, shiftY);
-//     triangle(91, 326, 76, 515, 112, 521);
-//     triangle(69, 297, 71, 392, 96, 433);
-//     triangle(119, 286, 117, 382, 82, 422);
-//     pop();
-//   }
-// }
+var Cactus = function(shiftX, shiftY){
+  this.display = function(){
+    push();
+    translate(shiftX, shiftY);
+    triangle(91, 326, 76, 515, 112, 521);
+    triangle(69, 297, 71, 392, 96, 433);
+    triangle(119, 286, 117, 382, 82, 422);
+    pop();
+  }
+}
 
 
 function setGradient(x, y, w, h, g2, g1) {
