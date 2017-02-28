@@ -53,7 +53,7 @@ var Dot = function() {
               this.speed = 5.0;
               this.speed++;
               this.radius--;
-            
+
               if (this.radius < 5) {
                   this.radius = 50;
               }
